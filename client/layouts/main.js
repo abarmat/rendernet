@@ -5,7 +5,6 @@ export default ({ children }) => (
   <div>
     <Meta />
     { children }
-
     <Footer />
   </div>
 )

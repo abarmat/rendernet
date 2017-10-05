@@ -64,8 +64,23 @@ export default class extends React.Component {
   render () {
     return (
       <div>
-        <Dropzone onDrop={this.onDrop.bind(this)} />
+        <style jsx>{`
+          canvas {
+            border: 2px solid #fff;
+            margin: auto;
+          }
+
+          .result {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 32px;
+          }
+        `}</style>
+
+        <Dropzone className='dropzone' activeClassName='dropzone-active' onDrop={this.onDrop.bind(this)} />
         <canvas width='200' height='200' ref='canvas' />
+
         {this.state.prediction === true &&
           <div className='result'>The photo is a render</div>
         }

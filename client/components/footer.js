@@ -24,7 +24,7 @@ export default () => (
         <a href='https://github.com/abarmat/rendernet'>Code</a>
       </p>
       <p className='author'>
-        <a href='https://abarmat.com'>Ariel Barmat</a> - 2007
+        <a href='https://abarmat.com'>Ariel Barmat</a> - 2017
       </p>
     </div>
   </footer>

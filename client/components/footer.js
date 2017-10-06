@@ -22,7 +22,7 @@ export default () => (
     <div className='container'>
       <p>Trained on a dataset from <a href='https://properati.com.ar'>Properati</a></p>
       <p className='code'>
-        <a href='https://github.com/abarmat/rendernet'>Code</a>
+        Using <a href='https://github.com/zeit/next.js'>next.js</a> + <a href='https://github.com/transcranial/keras-js'>keras.js</a> ❤️ &rsaquo; <a href='https://github.com/abarmat/rendernet'>Code</a>
       </p>
       <p className='author'>
         <a href='https://abarmat.com'>Ariel Barmat</a> - 2017

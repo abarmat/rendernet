@@ -67,6 +67,7 @@ export default class extends React.Component {
         <style jsx>{`
           canvas {
             border: 2px solid #fff;
+            display: inline-block;
             margin: auto;
           }
 

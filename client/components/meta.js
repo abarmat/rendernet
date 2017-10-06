@@ -24,14 +24,14 @@ export default () => (
       }
 
       section.predict {
-        margin: 64px 0;
+        margin: 100px 0;
       }
 
       .dropzone {
         border: 2px dashed #fff;
-        float: left;
-        margin: auto;
+        display: inline-block;
         margin-right: 48px;
+        margin-top: 24px;
         height: 200px;
         width: 200px;
       }
@@ -43,6 +43,7 @@ export default () => (
       }
 
       .container {
+        text-align: center;
         margin: auto;
         padding-left: 15px;
         padding-right: 15px;

@@ -29,7 +29,9 @@ export default () => (
 
       .dropzone {
         border: 2px dashed #fff;
+        float: left;
         margin: auto;
+        margin-right: 48px;
         height: 200px;
         width: 200px;
       }

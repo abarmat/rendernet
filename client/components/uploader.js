@@ -11,7 +11,8 @@ export default class extends React.Component {
     super(props)
 
     this.state = {
-      prediction: null
+      prediction: null,
+      confidence: null
     }
   }
 
@@ -28,9 +29,12 @@ export default class extends React.Component {
 
   predict (inputData) {
     this.model.predict({ input: inputData }).then(result => {
-      console.log(result.output)
+      const value = Math.max.apply(Math, result.output)
+      const threshold = 5
+      const isError = (100 - Math.abs(value) * 100) > threshold
       this.setState({
-        prediction: result.output.indexOf(Math.max.apply(Math, result.output)) === 1
+        prediction: (isError) ? -1 : result.output.indexOf(value),
+        confidence: value
       })
     }).catch(err => console.log(err))
   }
@@ -82,11 +86,14 @@ export default class extends React.Component {
         <Dropzone className='dropzone' activeClassName='dropzone-active' onDrop={this.onDrop.bind(this)} />
         <canvas width='200' height='200' ref='canvas' />
 
-        {this.state.prediction === true &&
+        {this.state.prediction === 1 &&
           <div className='result'>The photo is a render</div>
         }
-        {this.state.prediction === false &&
+        {this.state.prediction === 0 &&
           <div className='result'>The photo is "real"</div>
+        }
+        {this.state.prediction === -1 &&
+          <div className='result'>Mmm, not sure...</div>
         }
       </div>
     )
